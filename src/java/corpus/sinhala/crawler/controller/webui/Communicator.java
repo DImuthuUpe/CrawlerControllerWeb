@@ -5,7 +5,9 @@
 package corpus.sinhala.crawler.controller.webui;
 
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.net.Socket;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,8 +33,35 @@ public class Communicator extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            
-        } finally {            
+            out.print("Started");
+            String startDate= request.getParameter("startDate");
+            String endDate= request.getParameter("endDate");
+            //out.print(startDate);
+            Socket socket = new Socket("127.0.0.1", 11223);
+            OutputStreamWriter output = new OutputStreamWriter(
+                    socket.getOutputStream());
+
+            try {
+                String s;
+                s = "3"
+                        + "|"
+                        + startDate
+                        + "|"
+                        + endDate
+                        + "|" + 12346;
+
+                output.write(s);
+                output.write("\n");
+                output.flush();
+                output.write("close\n");
+                output.flush();
+            } catch (IOException e) {
+            }
+
+            output.close();
+            socket.close();
+            out.print("<br/>Done");
+        } finally {
             out.close();
         }
     }
