@@ -52,19 +52,21 @@
                     <td style="width: 100px">Active</td>
                     <td style="width: 100px">Port</td>
                 </tr>
-                <tr>
+                
                     <%
                     while (rs.next()) {
                     
                     %>
+                    <tr>
                     <td><%out.println(rs.getString(1));%></td>
-                    <td><%out.println(rs.getString(2));%></td>
+                    <td><a href="Detail?id=<%out.println(rs.getString(1));%>"><%out.println(rs.getString(2));%></a></td>
                     <td><%out.println(rs.getString(3));%></td>
                     <td><%out.println(rs.getString(4));%></td>
+                    </tr>
                     <%
                     }
                     %>
-                </tr>
+                
             </tbody>
             
         </table>
