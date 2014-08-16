@@ -74,7 +74,7 @@ public class DateRange {
                         return true;
                     }
                 }else if(eMonth==11){
-                    if(eDay==31&&day==1){
+                    if(eDay==30&&day==1){
                         return true;
                     }
                 }

@@ -4,6 +4,7 @@
     Author     : dimuthuupeksha
 --%>
 
+<%@page import="corpus.sinhala.crawler.controller.webui.SysProperty"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
@@ -12,6 +13,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@include file="header.jsp"%>
+
 <div id="middle">
     <%
 
@@ -21,8 +23,8 @@
 
                 // Step 2. Create a Connection object
                 Connection con = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/crawler_data",
-                        "root", "");
+                        "jdbc:mysql://"+SysProperty.getProperty("dbHost")+":3306/crawler_data",
+                        SysProperty.getProperty("dbUser"), SysProperty.getProperty("dbPassword"));
 
                 System.out.println("got connection");
 
@@ -32,7 +34,7 @@
                 Statement s = con.createStatement();
 
                 // Step 4. Use the same Statement object to obtain a ResultSet object
-                String sql = "SELECT ID, NAME, ACTIVE, PORT FROM Crawler";
+                String sql = "SELECT ID, NAME, ACTIVE, PORT FROM crawler";
                 ResultSet rs = s.executeQuery(sql);
                 
                 

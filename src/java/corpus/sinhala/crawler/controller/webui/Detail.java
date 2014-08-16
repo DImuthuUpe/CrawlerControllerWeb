@@ -49,8 +49,8 @@ public class Detail extends HttpServlet {
 
                 // Step 2. Create a Connection object
                 Connection con = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/crawler_data",
-                        "root", "");
+                        "jdbc:mysql://"+SysProperty.getProperty("dbHost")+":3306/crawler_data",
+                        SysProperty.getProperty("dbUser"), SysProperty.getProperty("dbPassword"));
 
                 System.out.println("got connection");
 

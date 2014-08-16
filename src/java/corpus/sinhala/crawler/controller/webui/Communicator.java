@@ -32,23 +32,25 @@ public class Communicator extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        String id = request.getParameter("id");
+        String port = request.getParameter("port");
         try {
             out.print("Started");
             String startDate= request.getParameter("startDate");
             String endDate= request.getParameter("endDate");
             //out.print(startDate);
-            Socket socket = new Socket("127.0.0.1", 11223);
+            Socket socket = new Socket("192.248.15.239", 11223);
             OutputStreamWriter output = new OutputStreamWriter(
                     socket.getOutputStream());
 
             try {
                 String s;
-                s = "3"
+                s = id
                         + "|"
                         + startDate
                         + "|"
                         + endDate
-                        + "|" + 12346;
+                        + "|" + port;
 
                 output.write(s);
                 output.write("\n");
@@ -56,6 +58,7 @@ public class Communicator extends HttpServlet {
                 output.write("close\n");
                 output.flush();
             } catch (IOException e) {
+                out.print(e.getMessage());
             }
 
             output.close();

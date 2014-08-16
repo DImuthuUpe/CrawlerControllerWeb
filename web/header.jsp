@@ -17,8 +17,9 @@
 
         <link href="css/ion.tabs.skinFlat.css" rel="stylesheet"
               type="text/css">
-
-
+        
+        <link rel="stylesheet" href="css/jquery-ui.css">
+        
 
         <script type="text/javascript"
         src="js/jquery-1.10.2.min.js"></script>
@@ -131,7 +132,7 @@
                                                                 style="">New Crawler</a>
                                                         </li>
                                                         <li><a
-                                                                href="../search/advancedSearch.jsp?region=region3&amp;item=registry_search_menu"
+                                                                href="task.jsp"
                                                                 class="menu-default"
                                                                 style="">Add New Job</a>
                                                         </li>
