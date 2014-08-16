@@ -42,6 +42,7 @@ public class Detail extends HttpServlet {
         List<DateRange> ranges = new ArrayList<DateRange>();
         try {
             String crawlerId = request.getParameter("id");
+            String crawlerName = "";
             try {
                 // Step 1. Load the JDBC driver
                 Class.forName("com.mysql.jdbc.Driver");
@@ -86,6 +87,11 @@ public class Detail extends HttpServlet {
                         ranges.add(range);
                     }
                 }
+                sql = "SELECT NAME FROM crawler where ID= " + crawlerId;
+                rs = s.executeQuery(sql);
+                if(rs.next()){
+                    crawlerName= rs.getString(1);
+                }
                 rs.close();
                 s.close();
                 con.close();
@@ -101,6 +107,7 @@ public class Detail extends HttpServlet {
             }
             request.setAttribute("ranges", ranges);
             request.setAttribute("id", crawlerId);
+            request.setAttribute("name",crawlerName);
             
             RequestDispatcher disp = request.getRequestDispatcher("detail.jsp");
             disp.forward(request, response);

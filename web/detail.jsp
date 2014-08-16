@@ -12,12 +12,10 @@
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@include file="header.jsp"%>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <!-- Style-->
+<div id="middle">
+    <div id="workArea">
     <style>
       html, body {
        height:100%;
@@ -26,17 +24,22 @@
       }
     </style>
         <title>JSP Page</title>
-    </head>
-    
-    <body>
-        <h1>Crawler : <%= request.getAttribute("id")%></h1>
-        <%
-            String crawlerId = (String)request.getAttribute("id");
-            List<DateRange> ranges = (List<DateRange>)request.getAttribute("ranges");
-        %>
-              
-      <div id="timeline-embed"></div>
-      
+        <table>
+            <tr>
+                <td style="height: 80px">
+                    <h1><%= request.getAttribute("name")%> Crawler</h1>
+                    <%
+                        String crawlerId = (String)request.getAttribute("id");
+                        List<DateRange> ranges = (List<DateRange>)request.getAttribute("ranges");
+                    %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="timeline-embed"></div>
+                </td>
+            </tr>
+        </table>
       <script type="text/javascript">
         var data= {"timeline":{
                     "type":"default",
@@ -60,13 +63,14 @@
                 }
             };
         var timeline_config = {
-         width: "600",
-         height: "100%",
+         width: "800",
+         height: "400",
          source: data
         }
       </script>
       <script type="text/javascript" src="js/storyjs-embed.js"></script>
       <div id="timeline-embed"></div>
-      
-    </body>
-</html>
+      </div>
+</div>
+<%@include file="footer.jsp" %>
+

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : crawlers
-    Created on : Aug 15, 2014, 1:23:21 PM
+    Document   : test
+    Created on : Aug 16, 2014, 1:36:26 PM
     Author     : dimuthuupeksha
 --%>
 
@@ -11,13 +11,9 @@
 <%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <%
+<%@include file="header.jsp"%>
+<div id="middle">
+    <%
 
             try {
                 // Step 1. Load the JDBC driver
@@ -41,37 +37,39 @@
                 
                 
         %>
-        <h1>Crawler List</h1>
-        
-        <table border="1">
-           
-            <tbody>
-                <tr>
-                    <td style="width: 100px">Id</td>
-                    <td style="width: 300px">Name</td>
-                    <td style="width: 100px">Active</td>
-                    <td style="width: 100px">Port</td>
-                </tr>
-                
-                    <%
+
+	<h2>Crawler List</h2>
+
+
+	<div id="workArea">
+		<table class="styledLeft" id="userListTable">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Active</th>
+					<th>Port</th>
+				</tr>
+			</thead>
+			<tbody>
+                            <%
                     while (rs.next()) {
                     
                     %>
                     <tr>
-                    <td><%out.println(rs.getString(1));%></td>
-                    <td><a href="Detail?id=<%out.println(rs.getString(1));%>"><%out.println(rs.getString(2));%></a></td>
-                    <td><%out.println(rs.getString(3));%></td>
-                    <td><%out.println(rs.getString(4));%></td>
+                        <td><%out.println(rs.getString(1));%></td>
+                        <td><a href="Detail?id=<%out.println(rs.getString(1));%>"><%out.println(rs.getString(2));%></a></td>
+                        <td><%out.println(rs.getString(3));%></td>
+                        <td><%out.println(rs.getString(4));%></td>
                     </tr>
                     <%
                     }
                     %>
-                
-            </tbody>
-            
-        </table>
-        
-        <%
+                        </tbody>
+                </table>
+        </div>
+</div>
+<%
         rs.close();
                 s.close();
                 con.close();
@@ -85,6 +83,25 @@
                 // other unexpected exception, print error message to the console
                 System.out.println(e3.toString());
             }
-        %>
-    </body>
-</html>
+ %>
+<script type="text/javascript">
+
+jQuery.fn.dataTableExt.oSort['string-case-asc']  = function(x,y) {
+    return ((x < y) ? -1 : ((x > y) ?  1 : 0));
+};
+ 
+jQuery.fn.dataTableExt.oSort['string-case-desc'] = function(x,y) {
+    return ((x < y) ?  1 : ((x > y) ? -1 : 0));
+};
+
+$(document).ready(function() {
+	$('#userListTable').dataTable({
+		"bAutoWidth": false,
+		"sPaginationType": "full_numbers",
+		"bJQueryUI": true,
+		"aaSorting": [[ 4, "desc" ]]
+	});
+} );
+</script>
+
+<%@include file="footer.jsp" %>
