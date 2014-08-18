@@ -64,7 +64,7 @@ public class Detail extends HttpServlet {
                 ResultSet rs = s.executeQuery(sql);
                 while (rs.next()) {
                     String rawDate = rs.getString(1);
-                    out.print(rawDate+"<br/>");
+                    //out.print(rawDate+"<br/>");
                     String str[] = rawDate.split("/");
                     int year = Integer.parseInt(str[0]);
                     int month = Integer.parseInt(str[1]);
@@ -95,16 +95,12 @@ public class Detail extends HttpServlet {
                 rs.close();
                 s.close();
                 con.close();
-            } catch (ClassNotFoundException e1) {
-                // JDBC driver class not found, print error message to the console
-                System.out.println(e1.toString());
-            } catch (SQLException e2) {
-                // Exception when executing java.sql related commands, print error message to the console
-                System.out.println(e2.toString());
-            } catch (Exception e3) {
+            }catch (Exception e3) {
                 // other unexpected exception, print error message to the console
-                System.out.println(e3.toString());
+                out.print(e3.toString());
+                e3.printStackTrace();
             }
+            out.print("Hoooooo");
             request.setAttribute("ranges", ranges);
             request.setAttribute("id", crawlerId);
             request.setAttribute("name",crawlerName);
