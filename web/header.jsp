@@ -117,7 +117,7 @@
                                                                 style="">Crawler List</a>
                                                         </li>
                                                         <li><a
-                                                                href="../search/advancedSearch.jsp?region=region3&amp;item=registry_search_menu"
+                                                                href="new_crawler.jsp"
                                                                 class="menu-default"
                                                                 style="">New Crawler</a>
                                                         </li>
