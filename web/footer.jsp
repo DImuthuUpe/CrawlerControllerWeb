@@ -14,7 +14,7 @@
 
                         <div id="footer-div">
                             <div class="footer-content">
-                                <div class="copyright">© 2005 - 2013 WSO2 Inc. All Rights
+                                <div class="copyright">© 2014 Sinmin All Rights
 								Reserved.</div>
                                 <!--div class="poweredby">
 		</div-->

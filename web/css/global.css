@@ -460,7 +460,7 @@ div#menu ul.sub li a.menu-disabled-link:hover {
 }
 
 div#menu ul.sub {
-	*margin-top: -13px;
+	margin-top: 0px;
 }
 
 /* -------------- child no-01 styles -------------- */
@@ -1389,7 +1389,7 @@ div.clear {
 	white-space: nowrap;
 	display: block;
 	width: 60px;
-	*position: absolute;
+/*	position: absolute;*/
 	margin-left: -25px;
 	margin-top: 40px;
 	padding-right: 2px;

@@ -17,9 +17,9 @@
 
         <link href="css/ion.tabs.skinFlat.css" rel="stylesheet"
               type="text/css">
-        
+
         <link rel="stylesheet" href="css/jquery-ui.css">
-        
+
 
         <script type="text/javascript"
         src="js/jquery-1.10.2.min.js"></script>
@@ -39,9 +39,9 @@
         <!-- JS imports for collapsible menu -->
         <script src="js/yahoo-dom-event.js" type="text/javascript"></script>
         <script src="js/animation-min.js" type="text/javascript"></script>
-        
+
         <script src="js/template_admin.js" type="text/javascript"></script>
-        
+
         <script src="js/yahoo-min.js" type="text/javascript"></script>
         <script src="js/selector-min.js" type="text/javascript"></script>
 
@@ -60,17 +60,13 @@
                             <div class="header-links">
                                 <div class="right-links">
                                     <ul>
-
-
-
-                                        <li class="middle"><label id="logged-user"> <strong>Signed-in
-												as:</strong>
+                                        <li class="middle">
+                                            <label id="logged-user"> <strong>Signed-in as:</strong>
                                             </label>
                                         </li>
                                         <li class="middle">|</li>
                                         <li class="right"><a href="controller/logout.jag">Sign-out</a>
                                         </li>
-
                                         <li class="middle">|</li>
                                         <li class="middle"><a target="_blank"
                                                               href="http://docs.wso2.org/wiki/display/AS520/WSO2+Application+Server+Documentation">Docs</a>
@@ -83,24 +79,21 @@
                                 </div>
                             </div>
                         </div>
-
-
                     </td>
                 </tr>
                 <tr style="height:600px">
                     <td class="vertical-menu-container" id="vertical-menu-container"
                         style="">
                         <div id="menu-panel-button0" class="showToHidden"></div>
-                        
+
                         <div id="menu-panel-button1" class="menu-panel-buttons selected"></div>
-                        
+
                         <div id="menu-panel-button2" class="menu-panel-buttons"></div>
 
                     </td>
                     <td id="menu-panel" valign="top">
                         <table id="menu-table" border="0" cellspacing="0">
                             <tbody>
-                                
                                 <tr>
                                     <td id="region2">
                                         <div id="menu">
@@ -111,16 +104,13 @@
                                 </tr>
                                 <tr>
                                     <td id="region3">
-
-
-
                                         <div id="menu">
                                             <ul class="main">
-                                                
                                                 <li id="region3_registry_menu" class="menu-header"
                                                     onclick="mainMenuCollapse(this.childNodes[0])"
                                                     style="cursor: pointer">Main Menu</li>
-                                                <li class="normal"><ul class="sub">
+                                                <li class="normal">
+                                                    <ul class="sub">
                                                         <li><a
                                                                 href="crawlers.jsp"
                                                                 class="menu-default"
@@ -146,18 +136,14 @@
                                                                 class="menu-default"
                                                                 style="">Summary</a>
                                                         </li>
-                                                    </ul></li>
-
+                                                    </ul>
+                                                </li>
                                             </ul>
                                         </div>
-
                                     </td>
                                 </tr>
                                 <tr>
                                     <td id="region4">
-
-
-
                                         <div id="menu">
                                             <ul class="main">
                                                 <li id="region4_monitor_menu" class="menu-header"
