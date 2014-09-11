@@ -9,16 +9,18 @@
 <html>
     <head>
         <link href="css/global.css" rel="stylesheet"
-              type="text/css" media="all">
+              type="text/css" media="all"/>
         <link href="css/lightBox.css" rel="stylesheet"
-              type="text/css" media="all">
+              type="text/css" media="all"/>
+        <link href="css/app.css" rel="stylesheet"
+              type="text/css" media="all"/>
 
         <script type="text/javascript">var baseAt=""</script>
 
         <link href="css/ion.tabs.skinFlat.css" rel="stylesheet"
-              type="text/css">
+              type="text/css" />
 
-        <link rel="stylesheet" href="css/jquery-ui.css">
+        <link rel="stylesheet" href="css/jquery-ui.css" />
 
 
         <script type="text/javascript"

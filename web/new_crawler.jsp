@@ -13,20 +13,26 @@
     <div id="workArea">
         <form action="NewCrawler" method="post" enctype="multipart/form-data">
             <table>
+                <thead>
+                <th width="30%"></th>
+                <th width="70%"></th>
+                </thead>
                 <tr style="height: 30px">
                     <td>Crawler Name</td>
-                    <td><input type="text" size="50" name="name"/></td>
+                    <td><input type="text" size="50" name="name" style="height: 20px"/></td>
                 </tr>   
                 <tr>
                     <td>
                         Crawler File
                     </td>
                     <td>
-                        <input type="file" name="file" size="50"/>
+                        <input type="file" name="file" size="60"/>
                     </td>
                 </tr>
+                <tr>
+                    <td colspan="2"><input type="Submit" value="Submit" style="float: right"/></td>
+                </tr>
             </table>
-            <input type="Submit" value="Submit"/>
         </form>
     </div>
 </div>

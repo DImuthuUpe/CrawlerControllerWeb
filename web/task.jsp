@@ -37,11 +37,15 @@
         <form action="Communicator">
             <input type="hidden" name="id" value="<%out.print(request.getParameter("id"));%>">
                 <table>
+                    <thead>
+                    <th width="50%"></th>
+                    <th width="50%"></th>
+                    </thead>
                     <tr style="width: 100%;height: 50px">
-                        <td style="width: 300px;">
+                        <td>
                             <p>Start Date: <input type="text" id="startDate" name="startDate"></p>
                         </td>
-                        <td style="width: 300px;">
+                        <td>
                             <p>End Date: <input type="text" id="endDate" name="endDate"></p>
                         </td>
                     </tr>
@@ -50,8 +54,7 @@
                          <td></td>
                     </tr>
                     <tr>
-                        <td><input type="submit" value="Start Crawling"/></td>
-                        <td></td>
+                        <td colspan="2"><input type="submit" value="Start Crawling" style="float: right"/></td>
                     </tr>
                 </table>
             </form>
