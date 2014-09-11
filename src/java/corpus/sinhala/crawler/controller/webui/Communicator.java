@@ -39,7 +39,7 @@ public class Communicator extends HttpServlet {
             String startDate= request.getParameter("startDate");
             String endDate= request.getParameter("endDate");
             //out.print(startDate);
-            Socket socket = new Socket("192.248.15.239", 11223);
+            Socket socket = new Socket(SysProperty.getProperty("dbHost"), 11223);
             OutputStreamWriter output = new OutputStreamWriter(
                     socket.getOutputStream());
 
