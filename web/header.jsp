@@ -59,27 +59,7 @@
                                 </a>
                             </div>
                             <div class="middle-ad"></div>
-                            <div class="header-links">
-                                <div class="right-links">
-                                    <ul>
-                                        <li class="middle">
-                                            <label id="logged-user"> <strong>Signed-in as:</strong>
-                                            </label>
-                                        </li>
-                                        <li class="middle">|</li>
-                                        <li class="right"><a href="controller/logout.jag">Sign-out</a>
-                                        </li>
-                                        <li class="middle">|</li>
-                                        <li class="middle"><a target="_blank"
-                                                              href="http://docs.wso2.org/wiki/display/AS520/WSO2+Application+Server+Documentation">Docs</a>
-                                        </li>
-                                        <li class="middle">|</li>
-
-                                        <li class="left"><a target="_blank" href="../docs/about.html">About</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            
                         </div>
                     </td>
                 </tr>
@@ -128,52 +108,11 @@
                                                                 class="menu-default"
                                                                 style="">Add New Job</a>
                                                         </li>
-                                                        <li><a
-                                                                href="../search/advancedSearch.jsp?region=region3&amp;item=registry_search_menu"
-                                                                class="menu-default"
-                                                                style="">Running Jobs</a>
-                                                        </li>
-                                                        <li><a
-                                                                href="../search/advancedSearch.jsp?region=region3&amp;item=registry_search_menu"
-                                                                class="menu-default"
-                                                                style="">Summary</a>
-                                                        </li>
                                                     </ul>
                                                 </li>
                                             </ul>
                                         </div>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td id="region4">
-                                        <div id="menu">
-                                            <ul class="main">
-                                                <li id="region4_monitor_menu" class="menu-header"
-                                                    onclick="mainMenuCollapse(this.childNodes[0])"
-                                                    style="cursor: pointer; display: none;">User Management</li>
-                                                <li class="normal" style="display: none;"><ul class="sub">
-                                                        <li><a
-                                                                href="pages/user_management/edit_profile.jag"
-                                                                class="menu-default"
-                                                                style="">Edit profile</a></li>
-                                                        <li><a
-                                                                href="pages/user_portal/apply_permissions.jag"
-                                                                class="menu-default"
-                                                                style="">Apply permissions</a></li>
-                                                        <li><a
-                                                                href="pages/user_portal/view_permissions.jag"
-                                                                class="menu-default"
-                                                                style="">View  Permissions</a></li>
-
-                                                    </ul></li>
-                                            </ul>
-                                        </div>
-
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td></td>
                                 </tr>
                             </tbody>
                         </table>

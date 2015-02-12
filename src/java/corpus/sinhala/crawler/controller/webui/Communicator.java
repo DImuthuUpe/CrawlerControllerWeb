@@ -30,16 +30,18 @@ public class Communicator extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         String id = request.getParameter("id");
         String port = request.getParameter("port");
         try {
-            out.print("Started");
+            
             String startDate= request.getParameter("startDate");
             String endDate= request.getParameter("endDate");
-            //out.print(startDate);
+            out.print(startDate);
             Socket socket = new Socket(SysProperty.getProperty("dbHost"), 11223);
+
             OutputStreamWriter output = new OutputStreamWriter(
                     socket.getOutputStream());
 
@@ -63,7 +65,8 @@ public class Communicator extends HttpServlet {
 
             output.close();
             socket.close();
-            out.print("<br/>Done");
+            
+            response.sendRedirect("task.jsp");
         } finally {
             out.close();
         }
